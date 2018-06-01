@@ -1,5 +1,3 @@
-// declare array fro the flash card questions and answers
-let flashcards = [['question1','answer1'],['question2','answer2']];
 let questionIndex;
 
 // select the document p element by id flashcardQuestion
@@ -45,8 +43,6 @@ function showRandomFlashcardQuestion() {
   answerId.innerHTML='';
 }
 
-// call the showRandomFlashcard fuction
-showRandomFlashcardQuestion()
 
 // declare function to show the flashcard answer for the question
 function showFlashcardAnswer() {
@@ -54,6 +50,16 @@ function showFlashcardAnswer() {
   answerId.innerHTML=flashcards[questionIndex][1];
 }
 
+// declare function to save the flashcard answer for the question
+function saveFlashcard() {
+  var newQuestion = document.getElementById('newFlashcardQuestion');
+  console.log(newQuestion.value)
+}
+
+// execute the code
+
+// call the showRandomFlashcard fuction
+showRandomFlashcardQuestion()
 
 // select the document button element by id nextFlashcardQuestion
 var nextFlashcardQuestionId = document.getElementById('nextFlashcardQuestion');
@@ -70,3 +76,5 @@ var nextFlashcardAnswerId = document.getElementById('nextFlashcardAnswer');
 nextFlashcardAnswerId.onclick = function() {
     showFlashcardAnswer()
 }
+
+console.log(flashcards);
