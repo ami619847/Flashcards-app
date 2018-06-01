@@ -3,11 +3,20 @@
 
 <head>
   <meta charset="utf-8">
-  <title>FlashcardApp</title>
+  <title>Flashcard App</title>
   <link href="style.css" rel="stylesheet" type="text/css">
 </head>
+<style>
+.content {
+  max-width: 500px;
+  margin: auto;
+}
+</style>
+
 <body>
-<h1>FlashcardApp</h1>
+  <div class="content">
+  <!-- Page content -->
+<h1>FLASHCARD</h1>
 <p id='flashcardQuestion'></p>
 <p id='flashcardAnswer'></p>
 
@@ -15,10 +24,25 @@
   <button id='nextFlashcardQuestion'>Show the next question</button>
   <button id='nextFlashcardAnswer'>Show the answer</button>
   <br></br>
-  <button onclick="location.href='newflashcard.html'" type="button" id='addNewFlashcard'>Add new flashcard</button>
+  <!--button onclick="location.href='newflashcard.html'" type="button" id='addNewFlashcard'>Add new flashcard</button-->
 </div>
-<script src="global.js"></script>
-<script src="main.js"></script>
+
+<h1>NEW FLASHCARD</h1>
+
+  <input type="text" id='newFlashcardQuestion' required></input>
+  <br></br>
+  <input type="text" id='newFlashcardAnswer' required></input>
+<br></br>
+
+<div class="centerButton2">
+  <button id='newFlashcard'>Save new flashcard</button>
+  <!--button onclick="location.href='index.html'" type="button" id='goBack'>Go Back to the Home page</button-->
+</div>
+
+
+</div>
+<script src="main.js">
+</script>
 </body>
 
 </html>
