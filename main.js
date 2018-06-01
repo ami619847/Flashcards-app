@@ -1,5 +1,6 @@
 // declare array fro the flash card questions and answers
 let flashcards = [['question1','answer1'],['question2','answer2']];
+let questionIndex;
 
 // select the document p element by id flashcardQuestion
 var questionId = document.getElementById('flashcardQuestion');
@@ -34,10 +35,38 @@ function showRandomFlashcard() {
 // call the showRandomFlashcard fuction
 // showRandomFlashcard()
 
-// select the document button element by id nextFlashcard
-var nextFlashcardId = document.getElementById('nextFlashcard');
+// declare function to show a flashcard question
+function showRandomFlashcardQuestion() {
+  let randomFlashcardIndex=getRandomInt(flashcards.length);
+  console.log('random number =' + randomFlashcardIndex);
+  //let flashcardQuestion=flashcards[randomFlashcardIndex];
+  questionId.innerHTML=flashcards[randomFlashcardIndex][0];
+  questionIndex=randomFlashcardIndex;
+  answerId.innerHTML='';
+}
 
-// show next flashcard on button click
-nextFlashcardId.onclick = function() {
-    showRandomFlashcard()
+// call the showRandomFlashcard fuction
+showRandomFlashcardQuestion()
+
+// declare function to show the flashcard answer for the question
+function showFlashcardAnswer() {
+  console.log('question index =' + questionIndex);
+  answerId.innerHTML=flashcards[questionIndex][1];
+}
+
+
+// select the document button element by id nextFlashcardQuestion
+var nextFlashcardQuestionId = document.getElementById('nextFlashcardQuestion');
+
+// show next flashcard question on button click
+nextFlashcardQuestionId.onclick = function() {
+    showRandomFlashcardQuestion()
+}
+
+// select the document button element by id nextFlashcardAnswer
+var nextFlashcardAnswerId = document.getElementById('nextFlashcardAnswer');
+
+// show next flashcard answer on button click
+nextFlashcardAnswerId.onclick = function() {
+    showFlashcardAnswer()
 }
