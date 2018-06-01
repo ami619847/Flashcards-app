@@ -32,4 +32,12 @@ function showRandomFlashcard() {
 }
 
 // call the showRandomFlashcard fuction
-showRandomFlashcard()
+// showRandomFlashcard()
+
+// select the document button element by id nextFlashcard
+var nextFlashcardId = document.getElementById('nextFlashcard');
+
+// show next flashcard on button click
+nextFlashcardId.onclick = function() {
+    showRandomFlashcard()
+}
