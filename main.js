@@ -1,6 +1,7 @@
 // declare array for the flash card questions and answers
 let flashcards = [['question1','answer1'],['question2','answer2']];
 let questionIndex;
+let oldRandomIndex=999999;
 
 // select the document p element by id flashcardQuestion
 var questionId = document.getElementById('flashcardQuestion');
@@ -38,6 +39,10 @@ function showRandomFlashcard() {
 // declare function to show a flashcard question
 function showRandomFlashcardQuestion() {
   let randomFlashcardIndex=getRandomInt(flashcards.length);
+  while (randomFlashcardIndex===oldRandomIndex){
+    randomFlashcardIndex=getRandomInt(flashcards.length)
+  }
+  oldRandomIndex=randomFlashcardIndex;
   console.log('random number =' + randomFlashcardIndex);
   //let flashcardQuestion=flashcards[randomFlashcardIndex];
   questionId.innerHTML=flashcards[randomFlashcardIndex][0];
